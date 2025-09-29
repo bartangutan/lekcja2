@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 
 public class Main {
@@ -21,6 +22,16 @@ public class Main {
         ArrayList<Integer> wylosowaneLiczby = wylosujLiczbyDoListy(10);
         wypisz(wylosowaneLiczby);
 
+        wypisz(wylosujLiczbyDoZbioru(5));
+
+    }
+    private static HashSet<Integer> wylosujLiczbyDoZbioru(int ileLiczba){
+        HashSet<Integer> zbiorLiczbLosowych = new HashSet<>();
+        Random random = new Random();
+        for (int i = 0; i < ileLiczba; i++) {
+            zbiorLiczbLosowych.add(random.nextInt(20)+1);
+        }
+        return zbiorLiczbLosowych;
     }
 
     private static ArrayList<Integer> wylosujLiczbyDoListy(int ileLiczb) {
@@ -58,6 +69,13 @@ public class Main {
         System.out.println("Wszystkie liczby wylosowane: ");
         for (int elementTablicy : tablicaDoWypisania) {
             System.out.println(elementTablicy + ", ");
+        }
+    }
+
+    private static void wypisz(HashSet<Integer> zbior){
+        System.out.println("Wylosowany zbiór:");
+        for (int elementZbioru: zbior) {
+            System.out.println(elementZbioru+", ");
         }
     }
 
