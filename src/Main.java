@@ -28,7 +28,7 @@ public class Main {
     private static HashSet<Integer> wylosujLiczbyDoZbioru(int ileLiczba){
         HashSet<Integer> zbiorLiczbLosowych = new HashSet<>();
         Random random = new Random();
-        for (int i = 0; i < ileLiczba; i++) {
+        while(zbiorLiczbLosowych.size()<ileLiczba) {
             zbiorLiczbLosowych.add(random.nextInt(20)+1);
         }
         return zbiorLiczbLosowych;
